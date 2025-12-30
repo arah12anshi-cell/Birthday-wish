@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happiest Birthday Cutuu ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.25);
+      padding: 40px;
+      border-radius: 25px;
+      max-width: 520px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      font-size: 2.6em;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .heart {
+      font-size: 40px;
+      animation: beat 1s infinite;
+      margin: 15px 0;
+    }
+
+    @keyframes beat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+
+    .countdown {
+      margin-top: 20px;
+      font-size: 1.3em;
+      font-weight: bold;
+      background: rgba(255,255,255,0.2);
+      padding: 15px;
+      border-radius: 15px;
+    }
+
+    footer {
+      margin-top: 25px;
+      font-style: italic;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>🎉 Happiest Birthday Cutuu ❤️ 🎉</h1>
+    <h2>To the one who owns my heart , i Love you babu💕</h2>
+
+    <p>
+      You are the reason behind my smiles and my happiness.
+      On your special day, I wish you endless joy, love, and success.
+    </p>
+
+    <p>
+      Thank you for being you. I’m so lucky to have you in my life.
+      Today is all about celebrating <strong>YOU</strong> 🥰
+    </p>
+
+    <div class="heart">❤️</div>
+
+    <div class="countdown" id="countdown">
+      Countdown loading...
+    </div>
+
+    <footer>
+      With all my love,<br>
+      <strong>[favieee🎀]</strong>
+    </footer>
+  </div>
+
+  <script>
+    // 🎂 BIRTHDAY: 31 DECEMBER 2025
+    const birthdayDate = new Date("2025-12-31T00:00:00").getTime();
+
+    const timer = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = birthdayDate - now;
+
+      if (distance <= 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML =
+          "🎂 It’s your birthday, Cutuu! 🎉❤️";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `⏳ ${days}d ${hours}h ${minutes}m ${seconds}s left`;
+    }, 1000);
+  </script>
+
+</body>
+</html>
